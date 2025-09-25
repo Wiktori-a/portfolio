@@ -3,7 +3,6 @@
     font-family: Georgia, 'Times New Roman', Times, serif ;
 }
 .tytul{
-    /* font-style: italic; */
     text-align: center;
     margin: 0px;
     padding: 25px;
@@ -20,29 +19,19 @@ html, body {
 }
 header{
     background-color: rgb(184, 182, 182);
-    /* height: 120px; */
-    /* box-shadow: 2px 2px 20px rgb(102, 103, 101); */
-    
-    
 }
-body{
+.glowny{
     animation: slideIn 0.6s ease-out forwards;
-    
-   
 }
-/* 
-.dostaneCholery{
-    height: 100%;
-    
-} */
- .dostaneCholery {
+
+ .klasa {
     display: flex;
     flex-direction: column;
     height: 100%;
 }
 .kontener {
     display: flex;
-    flex: 1; /* zajmuje całą pozostałą przestrzeń */
+    flex: 1; 
 }
 
 
@@ -50,13 +39,9 @@ body{
 .x{
     width: 15%;
     background-color: rgb(184, 182, 182);
-    /* border: 3px solid rgba(168, 154, 139, 0.233); */
-    /* box-shadow: 2px 2px 20px rgb(102, 103, 101); */
     text-align: center;
     padding-top: 6%;
     border-bottom-right-radius: 50px; 
-    
-    
 }
 
 .y{
@@ -64,21 +49,13 @@ body{
     flex-direction: column;
     width: 85%;
     height: 100%;
-    /* box-shadow: 2px 2px 20px rgb(102, 103, 101); */
-    /* border: 3px solid rgb(237, 237, 233); */
     background-color: rgb(184, 182, 182);
-     
-    
-    
     }
 
-    /* .flex{
-       display: flex; 
-    } */
-    .div {
+.div {
     border-top-left-radius: 40px;
     background-color: rgb(229, 230, 228);
-    padding: 40px; /* możesz zostawić lub zmienić */
+    padding: 40px;
     
     height: auto;
     flex: 1;
@@ -95,7 +72,6 @@ h2{
 .zakladki{
     margin-top: 30px;
     padding: 3px;
-    /* border: solid 1px rgb(190, 178, 169); */
     background-color: antiquewhite;
     text-decoration: none;
     display: block;
@@ -112,7 +88,7 @@ h2{
 
 }
 
-.zakladki:hover{
+.zakladki:hover, .projekty:hover{
     background-color: rgb(184, 182, 182);
     transform: scale(1.04);
 }
@@ -127,33 +103,78 @@ h2{
         opacity: 1;
       }
     }
-    .text{
+.text{
         padding: 50px;
         font-size: 25px;
         margin: 0px;
         text-align: left;
-    }
-    footer{
+}
+
+footer{
         margin-bottom: 0px;
         text-align: center;
         height: 50px;
-        /* padding-top: 30px; */
-        
-       
-    }
+}
 
-    .mailto{
-        font-style: italic;
+.mailto{
+        font-style: normal;
         margin: 0px;
         font-size: 25px;
-        font-style: italic;
-    }
+}
 
-    .no{
+.mailto:hover{
+        font-style: italic;
+}
+.no{
         font-size: 30px;
         font-weight: bold;
         border-bottom: 2px solid;
         padding-bottom: 5px;
-        width: 13%;
+        width: 14%;
         margin-left: 3%;
+}
+.projekty{
+    padding: 3px;
+    margin: 50px;
+    background-color: antiquewhite;
+    text-decoration: none;
+    display: block;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 25px;
+    transition: transform 0.4s ease;
+    background-color: rgb(164, 161, 161);
+    padding: 10px;
+    box-shadow: 0px 0px 10px rgb(155, 152, 152);
+    font-style: italic;
+    border-radius: 5px;
+}
+
+@media (max-width: 1100px) {
+
+
+    .zakladki{
+    font-size: 15px;
     }
+
+    .no{
+    width: 40%;
+    }
+}
+@media(max-width: 500px){
+    .zakladki{
+        font-size: 10px;
+    }
+    .no{
+        width: 60%;
+    }
+    .text{
+        font-size: 20px;
+    }
+}
+
+.lista{
+    display: flex;
+    font-size: 25px;
+}
