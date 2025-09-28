@@ -177,4 +177,10 @@ footer{
 .lista{
     display: flex;
     font-size: 25px;
+    justify-content: center;
+}
+
+li{
+    padding: 10px;
+    padding-right: 40px;
 }
