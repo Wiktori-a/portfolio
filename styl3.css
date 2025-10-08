@@ -1,0 +1,47 @@
+*{
+    font-family: century, serif;
+    text-align: center;
+}
+
+header, footer{
+    background-color: indigo;
+    color: white;
+    font-style: italic;
+    padding: 2px;
+}
+
+section{
+    width: 50%;
+    height: 470px;
+}
+
+img{
+    padding: 3px;
+    margin: 10px;
+    border: dashed 2px slateblue;
+}
+
+a{
+    color: white;
+}
+
+.przycisk{
+    background-color: slateblue;
+    color: white;
+    border: none;
+    padding: 10px 20px 10px 20px;
+    margin-top: 10px;
+}
+
+.przycisk:hover{
+    background-color: indigo;
+}
+
+.suwak{
+    width: 80%;
+}
+
+main{
+    display: flex;
+    flex-wrap: wrap;
+}

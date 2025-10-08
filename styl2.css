@@ -1,0 +1,74 @@
+*{
+    font-family: Georgia;
+    color: white;
+}
+
+header, footer{
+    background-color: maroon;
+    text-align: center;
+    padding: 2px;
+}
+
+.lewy, .srodkowy, .prawy{
+    background-color: lightsalmon;
+    height: 527px;
+}
+
+.lewy, .prawy{
+    width: 15%;
+}
+
+.srodkowy{
+    width: 70%;
+}
+
+main{
+    display: flex;
+}
+
+.miniaturki{
+    background-color: maroon;
+    height: 70px
+}
+
+input{
+    background-color: lightsalmon;
+    color: maroon;
+    border: none;
+    font-size: 400%;
+    display: block;
+    margin: auto;
+    padding-top: 210px;
+}
+
+.miniaturki img{
+    height: 70px;
+    animation: slideIn 4s forwards;
+}
+
+@keyframes slideIn{
+    from{
+        padding-left: 50px
+    }
+    to{
+        padding-left: 0px;
+    }
+}
+
+.srodkowy img{
+    display: block;
+    margin: auto;
+    padding-top: 45px;
+}
+
+.srodkowy img:hover{
+    animation: zoomIn 5s forwards;
+}
+
+@keyframes zoomIn{
+    from{
+        transform: scale(1);
+    }to{
+        transform: scale(1.2);
+    }
+}
