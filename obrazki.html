@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Efekty obrazu</title>
+    <link rel = "stylesheet" href="styl.css">
+</head>
+<body>
+    <header>
+        <h2>Efekty na obrazach</h2>
+    </header>
+    <main>
+    <section>
+       
+        <img src = "pszczola.jpg" alt = "pszczola na fioletowym kwaitku" id="pszczola">
+        <form> 
+            <label><input type = "radio" name = "pszczola" value = "blur">Blur</input></label><br>
+            <label><input type = "radio" name = "pszczola" value = "sepia">Sepia</input></label><br>
+            <label><input type = "radio" name = "pszczola" value = "negatyw">Negatyw</input></label><br>
+            <input type = "button" value = "Zastosuj" class="przycisk" id="przycisk1"></input>
+        </form>
+    </section>
+    <section>
+        
+        <img src = "pomarancza.jpg" alt = "drzewo pomaranczy" id="drzewo">
+        <form>
+        <input type = "button" value="Kolorowy" class="przycisk" id="przycisk3"></input>
+        <input type = "button" value ="Czarnobialy" class="przycisk" id="przycisk2"></input>
+    </form>
+    </section>
+    <section>
+        <img src = "owoce.jpg" alt = "Kosz pełen owocow" id="owoce">
+        <form>
+        <input type = "range" min = "0" max = "100" value="100" class="suwak" id="suwak1"></input><br>
+        <input type = "button" value = "Zastosuj" class="przycisk" id = "przycisk4" ></input>
+        </form>
+    </section>
+    <section>
+        <img src="zolw.jpg" alt="Zolw w wodzie" id="zolw">
+        <form>
+        <input type="range"  min="0" max="250" class="suwak" id = "suwak2"></input><br>
+        <input type = "button" value = "Zastosuj" class="przycisk" id="przycisk5" ></input>
+        </form>
+    </section>
+    </main>
+    <footer>
+    </footer>
+    <script>
+        const pszczola = document.getElementById("pszczola");
+        const drzewo = document.getElementById("drzewo");
+        const owoce = document.getElementById("owoce");
+        const zolw = document.getElementById("zolw");
+        function pierwszy(e){
+            e.preventDefault();
+            
+            let opcja = document.querySelector('input[name="pszczola"]:checked').value;
+            if(opcja === "blur"){
+            let rand = Math.random() * (8-4)+4;
+            pszczola.style.filter=`blur(${rand}px)`;
+            }else if(opcja == "sepia"){
+                pszczola.style.filter=`sepia(100%)`;
+            }else if(opcja == "negatyw"){
+                pszczola.style.filter=`invert(100%)`;
+            }
+        }
+
+        function drugi(e){
+            e.preventDefault();
+
+        }
+        document.getElementById("przycisk1").addEventListener("click", pierwszy)
+        document.getElementById("przycisk2").addEventListener("click", function(e){
+            e.preventDefault();
+            drzewo.style.filter=`grayscale(100%)`;
+        })
+        document.getElementById("przycisk3").addEventListener("click", function(e){
+            e.preventDefault();
+            drzewo.style.filter = `grayscale(0%)`;
+        })
+        document.getElementById("przycisk4").addEventListener("click", function(e){
+            let wartosc = document.getElementById("suwak1").value;
+            wartosc = wartosc / 100;
+            owoce.style.opacity=`${wartosc}`;
+        })
+
+        document.getElementById("przycisk5").addEventListener("click", function(e){
+            let wartosc2 = document.getElementById("suwak2").value;
+            wartosc2 = wartosc2 / 100;
+            zolw.style.filter=`brightness(${wartosc2})`;
+        })
+    </script>
+</body>
+</html>

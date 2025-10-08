@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biuro turystyczne</title>
+    <link rel="stylesheet" href="styl.css">
+</head>
+<body>
+    <header><h1>Zwiedzamy Polske</h1></header>
+    <main>
+        <section class="lewy">
+            <input type="button" value="&lt;" id="wstecz">
+        </section>
+        <section class="srodkowy">
+            <img src="1.jpg" alt="Aktywne zdjecie" id="aktywne">
+        </section>
+        <section class="prawy">
+            <input type="button" value="&gt;" id="wprzod">
+        </section>
+    </main>
+    <section class="miniaturki">
+        <img src="1.jpg" alt="Gdańsk" id="1">
+        <img src="2.jpg" alt="Kraków">
+        <img src="3.jpg" alt="Niedzica">
+        <img src="4.jpg" alt="Pieniny">
+        <img src="5.jpg" alt="Szklarska Poręba">
+        <img src="6.jpg" alt="Tatry">
+        <img src="7.jpg" alt="Wrocław">
+    </section>
+    <footer>
+       
+    </footer>
+    <script>
+        let numer = 1;
+        let aktywne = document.getElementById("aktywne")
+        document.getElementById("wstecz").addEventListener("click", function(e){
+            numer--;
+            if(numer<1){
+                numer = 7;
+            }
+            aktywne.src = `${numer}.jpg`;
+        })
+
+        document.getElementById("wprzod").addEventListener("click", function(e){
+            numer++;
+            if(numer > 7){
+                numer = 1;
+            }
+            aktywne.src=`${numer}.jpg`;
+        })
+    </script>
+</body>
+</html>

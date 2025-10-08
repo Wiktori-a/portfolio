@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat</title>
+    <link rel="stylesheet" href="styl.css">
+</head>
+
+<body>
+    <div class="kontener">
+    <main>
+        <header><h2>Chat</h2></header>
+        <div class="glowny">
+            <div class="czat">
+                <div class = "jolka">
+                <img src = "JolkaEdit.jpg" class="jolkazdj"><p>Cześć idziesz jutro do kina?</p>
+                
+            </div>
+            <div class="krzysiek">
+                <img src = "Krzysiek.jpg" class="krzysiekzdj">
+                <p>Tak! A ty?</p>
+            </div>
+            </div>
+            <div>
+                 Wpisz wiadomość: <input type="text" class="pole"><input type="submit" value = "Wyślij" class="przycisk1">
+            </div>
+            <div>
+            <input type = "submit" value = "Generuj losowa wypowiedź" class="przycisk2">
+            </div>
+        </div>
+    </main>
+    <aside>
+        <h3>Chaty</h3>
+        <ul>
+            <li>Ogólny</li>
+            <li>Tematyczne
+                <ol>
+                    <li>Turystyczny</li>
+                    <li>Żeglarski</li>
+                    <li>Filatelistyczny</li>
+                    <li>Hodowla zwierzatek domowych</li>
+                </ol>
+            </li>
+        </ul>
+        <h3>Uczestnicy</h3>
+        <p>Jolanta Nowak</p>
+        <img src ="Jolkaedit.jpg" alt="Jolanta Nowak">
+        <p>Krzysztof Łukasiński</p>
+        <img src = "Krzysiek.jpg" alt = "Krzysztof Łukasiński">
+    </aside>
+</div>
+    <footer><h5>Chat wykonał: </h5></footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const przyciskWyslij = document.querySelector(".przycisk1");
+            przyciskWyslij.addEventListener("click", dodajWiadomosc);
+        });
+      
+        function dodajWiadomosc() {
+            const poleTekstowe = document.querySelector(".pole");
+            const tekst = poleTekstowe.value.trim();
+            if (tekst === "") return;
+        
+            const kontenerChatu = document.querySelector(".czat");
+        
+            const nowaWypowiedz = document.createElement("div");
+            nowaWypowiedz.className = "jolka";
+        
+            const obraz = document.createElement("img");
+            obraz.src = "JolkaEdit.jpg";
+            obraz.alt = "Jolanta Nowak";
+            obraz.className = "jolkazdj";
+        
+            const paragraf = document.createElement("p");
+            paragraf.textContent = tekst;
+        
+            nowaWypowiedz.appendChild(obraz);
+            nowaWypowiedz.appendChild(paragraf);
+        
+            kontenerChatu.appendChild(nowaWypowiedz);
+            kontenerChatu.scrollTop = kontenerChatu.scrollHeight;
+        
+            poleTekstowe.value = "";
+            }
+            document.addEventListener("DOMContentLoaded", ()=>{
+                const przyciskGeneruj = document.querySelector(".przycisk2");
+                przyciskGeneruj.addEventListener("click", generuj)
+
+            });
+
+            function generuj(){
+                const wypowiedzi = [
+                    "Świetnie!",
+                    "Kto gra główną rolę?",
+                    "Lubisz filmy Tego reżysera?",
+                    "Będę 10 minut wcześniej",
+                    "Może kupimy sobie popcorn?",
+                    "Ja wolę Colę",
+                    "Zaproszę jeszcze Grześka",
+                    "Tydzień temu też byłem w kinie na Diunie",
+                    "Ja funduję bilety"
+                ]
+            
+            const losowyIndeks = Math.floor(Math.random() * wypowiedzi.length);
+            const tekst = wypowiedzi[losowyIndeks];
+            const kontenerChatu = document.querySelector(".czat");
+            const obraz = document.createElement("img");
+            obraz.src = "Krzysiek.jpg";
+            obraz.alt = "Krzysztof Łukasiński";
+            obraz.className = "krzysiekzdj";
+            const paragraf = document.createElement("p");
+            paragraf.textContent = tekst;
+            const nowaWypowiedz = document.createElement("div");
+            nowaWypowiedz.className = "krzysiek";
+            nowaWypowiedz.appendChild(obraz);
+            nowaWypowiedz.appendChild(paragraf);
+
+            kontenerChatu.appendChild(nowaWypowiedz);
+            kontenerChatu.scrollTop = kontenerChatu.scrollHeight;
+        };
+        </script>
+</body>
+</html>
